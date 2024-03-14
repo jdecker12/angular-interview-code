@@ -1,1 +1,15 @@
-<p>Hello from the LOGIN UI</p>
+<h1>Login</h1>
+<form #loginForm="ngForm">
+  <label for="username">User Name</label>
+  <input type="text" id="username" name="username" [(ngModel)]="" requied />
+  <span *ngIf="loginForm.controls.username.invalid && (loginForm.controls.username.touched || loginForm.controls.username.dirty)">
+    User name is required
+  </span>
+  <label for="password">Password</label>
+  <input type="text" id="password" name="password" [(ngModel)]="password" required/>
+  <span *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.touched || loginForm.controls.password.dirty)">
+    User name is required
+  </span>
+</form>
+
+<button type="submit"(click)="login()">Login</button>
